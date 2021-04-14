@@ -1,4 +1,4 @@
-include("DualNumbers.jl")
+include("dualnumbers.jl")
 include("polynomials.jl")
 
 promote_rule(::Type{Polynomial{T}}, ::Type{D{Polynomial{S}}}) where {T, S <: Number} = D{Polynomial{typejoin(T, S)}}
