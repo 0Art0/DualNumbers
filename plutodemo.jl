@@ -29,9 +29,11 @@ end
 # ╔═╡ c59921e5-af59-44e8-b13d-ed20dd1f95b8
 begin
 	cd(mktempdir())
-	run(`gh repo clone 0Art0/DualNumbers`)
+	run(`wget https://raw.githubusercontent.com/0Art0/DualNumbers/main/dualnumbers.jl`)
+	run(`wget https://raw.githubusercontent.com/0Art0/DualNumbers/main/polynomials.jl`)
+	run(`wget https://raw.githubusercontent.com/0Art0/DualNumbers/main/derivatives.jl`)
 	
-	include("DualNumbers/derivatives.jl")
+	include("derivatives.jl");
 end
 
 # ╔═╡ 6aa1ed46-859b-4507-a098-501f1529fbee
