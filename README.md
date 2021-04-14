@@ -53,6 +53,9 @@ The second term is `2(x + ϵ) = (2 + 0 ϵ) ⋅ (x + ϵ) = 2x + 2 ϵ`
 The last term is just `1`.
 
 
+
 Put together, this gives `(x^2 + 2x ϵ) + (2x + 2 ϵ) + 1 = (x^2 + 2x + 1) + (2x + 2) ϵ`.
 
 The coefficient of `ϵ` is precisely `p'(x)`, the derivative of `p` at `x`!
+
+---
