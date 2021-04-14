@@ -27,3 +27,4 @@ Base.show(io::IO, x::D) = print(io, x.α, "  +  ", x.β, " ϵ")
 
 ϵ = D(zero(Real), one(Real))
 ε(::Type{T}) where {T} = D{T}(zero(T), one(T)) #
+
