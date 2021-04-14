@@ -13,11 +13,26 @@ macro bind(def, element)
     end
 end
 
-# ╔═╡ 7b20a012-afc6-403c-8f2a-24f9460d7230
-using Plots, PlutoUI
-
 # ╔═╡ 1d52556c-9d2b-11eb-1eae-1de24a17ca62
-include("/home/art/Documents/Code/Mathematics/derivatives.jl");
+begin
+	import Pkg
+	Pkg.activate(mktempdir())
+	
+	Pkg.add([
+		Pkg.PackageSpec(name="Plots", version="1"),
+ 		Pkg.PackageSpec(name="PlutoUI", version="0.7")
+			])
+	
+	using Plots, PlutoUI
+end
+
+# ╔═╡ c59921e5-af59-44e8-b13d-ed20dd1f95b8
+begin
+	cd(mktempdir())
+	run(`gh repo clone 0Art0/DualNumbers`)
+	
+	include("DualNumbers/derivatives.jl")
+end
 
 # ╔═╡ 6aa1ed46-859b-4507-a098-501f1529fbee
 md"
@@ -159,7 +174,7 @@ The coefficient of `ϵ` is precisely `p'(x)`, the derivative of `p` at `x`!
 
 # ╔═╡ Cell order:
 # ╟─1d52556c-9d2b-11eb-1eae-1de24a17ca62
-# ╟─7b20a012-afc6-403c-8f2a-24f9460d7230
+# ╟─c59921e5-af59-44e8-b13d-ed20dd1f95b8
 # ╟─6aa1ed46-859b-4507-a098-501f1529fbee
 # ╟─c35fee7c-2dfc-4797-a3fa-19d76a597261
 # ╟─a1e02614-fa79-409d-bca7-2f899d6027fe
