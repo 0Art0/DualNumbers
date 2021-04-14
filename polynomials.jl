@@ -3,9 +3,7 @@ struct Polynomial{T <: Number} <: Number
     degree::Int
     sym::Symbol
 
-    function Polynomial(coefs::Union{Vector{T}, Tuple{Vararg{T}}}; sym::Symbol  = :𝕩, rev::Bool = false) where T <: Number 
-        #reverses the order of the coefficients if required
-        #rev ? reverse!(coefs) : nothing
+    function Polynomial(coefs::Union{Vector{T}, Tuple{Vararg{T}}}; sym::Symbol  = :𝕩) where T <: Number 
         ##trimming the polynomial
         while length(coefs) > 0 && coefs[end] == zero(T)
             coefs = coefs[begin:end-1]
@@ -34,7 +32,6 @@ one(::Type{Polynomial{T}}) where {T} = Polynomial([one(T)])
 one(::Type{Polynomial})::Polynomial = Polynomial([1])
 
 Base.show(io::IO, p::Polynomial{T}) where T <: Number = print(io, join(reverse(["$(p[i])$(p.sym)^$i" for i ∈ 0:p.degree if p[i] != zero(T)]), " + "))
-#Base.show(io::IO, p::Polynomial{Quot{T, Q}}) where {T, Q} = join(reverse(["$(p[i].a) 𝕒^$i" for i ∈ 0:p.degree]), " + ") |> print
 
 (p::Polynomial)(x) = evalpoly(x, p.coefs) 
 
