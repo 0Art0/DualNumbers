@@ -17,7 +17,7 @@ end
 using Plots, PlutoUI
 
 # ╔═╡ 1d52556c-9d2b-11eb-1eae-1de24a17ca62
-include("derivatives.jl");
+include("/home/art/Documents/Code/Mathematics/derivatives.jl");
 
 # ╔═╡ 6aa1ed46-859b-4507-a098-501f1529fbee
 md"
@@ -49,7 +49,7 @@ md"### Enter your favourite polynomial here!"
 
 # ╔═╡ a9df6f48-0453-4d5e-8e0f-a37ca577fa47
 #modify this cell
-p = 2x^2 + 3x + 5
+p = 2x^2 + 9x + 5
 
 # ╔═╡ c7742703-5f8f-4c64-9578-aee20ecb07ec
 md"### Here is the derivative"
@@ -89,10 +89,13 @@ md"Adjust the value of `h`, sliding it towards zero"
 @bind h Slider(1e-10:1e-10:10, show_value = true, default = 1)
 
 # ╔═╡ ace1d43e-2704-4a8c-8c17-9e5c68e64d94
-plot(𝚡-h:h/1000:𝚡+h, p.(𝚡-h:h/1000:𝚡+h), label = "p(x)", xlabel = "x", ylabel = "y")
+begin
+	plot(𝚡-h:h/1000:𝚡+h, p.(𝚡-h:h/1000:𝚡+h), label = "p(x) = $p", xlabel = "x", ylabel = "y")
+	plot!([𝚡], linetype = :vline, label = "𝕩 = $𝚡")
+end
 
 # ╔═╡ 027e3632-a547-4a4d-8d13-199e9bb9120d
-md"Notice how the polynomial looks linear at `𝚡` for very small values of `h`"
+md"Notice how the polynomial looks linear at `𝚡` for very small values of `h`."
 
 # ╔═╡ 2ffd0c23-20c7-43c5-92ff-83c778a2c407
 
