@@ -26,4 +26,4 @@ promote_rule(::Type{D{T}}, ::Type{S}) where {T, S <: Number} = D{promote_type(T,
 Base.show(io::IO, x::D) = print(io, x.α, "  +  ", x.β, " ϵ")
 
 ϵ = D(zero(Real), one(Real))
-ε(::Type{T}) where {T} = D{T}(zero(T), one(T))
+ε(::Type{T}) where {T} = D{T}(zero(T), one(T)) #
