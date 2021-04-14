@@ -1,5 +1,5 @@
 # DualNumbers
-An implementation of dual numbers and polynomials in the Julia language. This includes an interactive Pluto notebook, which can be viewed at [this](https://binder.plutojl.org/v0.14.1/open?url=https%253A%252F%252Fgist.githubusercontent.com%252Ffonsp%252Fd88b3adc8c958dce780cf7c4df8fa437%252Fraw%252F73be9df9ec4f93b09538824da096020f76b7fdb5%252Fturtles.jl) link.
+An implementation of dual numbers and polynomials in the Julia language. This includes an interactive Pluto notebook, which can be viewed at [this](https://binder.plutojl.org/v0.14.1/open?url=https%253A%252F%252Fgithub.com%252F0Art0%252FDualNumbers%252Fblob%252Fe87df0d75c0f8edf6c0875db4298ee8f8f041478%252Fplutodemo.jl%253Fraw%253Dtrue) link.
 
 ## What are Dual Numbers?
 
