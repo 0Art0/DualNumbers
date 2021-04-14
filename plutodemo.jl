@@ -17,7 +17,7 @@ end
 using Plots, PlutoUI
 
 # ╔═╡ 1d52556c-9d2b-11eb-1eae-1de24a17ca62
-include("/home/art/Documents/Code/Mathematics/derivatives.jl");
+include("derivatives.jl");
 
 # ╔═╡ 6aa1ed46-859b-4507-a098-501f1529fbee
 md"
