@@ -36,7 +36,7 @@ promote_rule(::Type{Quot{T, Q}}, ::Type{S}) where {Q <: Val, T, S <: Number} = Q
 
 Base.show(io::IO, x::Quot{T, Q}) where {T <: Number, Q <: Val} = "$(x.a)  mod  $(getval(Q))" |> print
 
-rand(::Quot{T, Q}) where {T <: Number, Q <: Val} = Quot(rand(1:getval(Q)), getval(Q))
+Base.rand(::Quot{T, Q}) where {T <: Number, Q <: Val} = Quot(rand(1:getval(Q)), getval(Q))
 
 
 function GCD(p::T, q::T; bezout = true) where {T <: Number}
