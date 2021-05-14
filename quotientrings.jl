@@ -34,7 +34,7 @@ convert(::Type{Quot{T, Q}}, y::Quot{S, Q}) where {Q <: Val, T, S <: Number} = Qu
 
 promote_rule(::Type{Quot{T, Q}}, ::Type{S}) where {Q <: Val, T, S <: Number} = Quot{promote_type(T, S), Q}
 
-Base.show(io::IO, x::Quot{T, Q}) where {T <: Number, Q <: Val} = "$(x.a)  mod  $(getval(Q))" |> print
+Base.show(io::IO, x::Quot{T, Q}) where {T <: Number, Q <: Val} = print(io, "$(x.a)  mod  $(getval(Q))")
 
 Base.rand(::Type{Quot{T, Q}}) where {T <: Number, Q <: Val} = Quot(rand(1:getval(Q)), getval(Q))
 
