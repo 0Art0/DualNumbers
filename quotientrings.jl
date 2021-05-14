@@ -1,5 +1,3 @@
-include("math.jl")
-
 getval(::Type{Val{x}}) where {x} = x
 
 struct Quot{T, Q} <: T where {T <: Number, Q <: Val}
